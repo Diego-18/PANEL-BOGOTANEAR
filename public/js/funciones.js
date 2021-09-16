@@ -24,6 +24,22 @@ $(function () {
     }).fail(function () {
         alert("Ocurrió un error, intenta ingresar más tarde");
     }).always(function () {});
+    
+    $.ajax({
+        url: "data",
+        method: "POST",
+        dataType: "json",
+    }).done(function (data) {
+        var labels_dias = [];
+        $.each(data[0].ganador, function (key, value) {
+            labels_dias.push(value.fecha);
+        });
+        buscar_dia(labels_dias);
+
+    }).fail(function () {
+        alert("Ocurrió un error, intenta ingresar más tarde");
+        prueba();
+    }).always(function () {});
 
     $("#btn_inicio").click(function () {
         $("#puntos_div").hide();
@@ -146,12 +162,133 @@ $(function () {
 
 
     // DÍA
-    function buscar_dia() {
+    // DÍA
+    function buscar_dia(labels_dias) {
+        array = []
+        labels_dias.forEach(element => {
+            array.push(element.substr(0, 10))
+        });
+        
+        numeroYdia = [];
+        array.forEach(element => {
+            parseInt(numeroYdia.push(element.substr(0, 2)));
+        });
+      
+        contdia0 = 0;
+        contdia1 = 0;
+        contdia2 = 0;
+        contdia3 = 0;
+        contdia4 = 0;
+        contdia5 = 0;
+        contdia6 = 0;
+        contdia7 = 0;
+        contdia8 = 0;
+        contdia9 = 0;
+        contdia10 = 0;
+        contdia11 = 0;
+        contdia12 = 0;
+        contdia13 = 0;
+        contdia14 = 0;
+        contdia15 = 0;
+        contdia16 = 0;
+        contdia17 = 0;
+        contdia18 = 0;
 
+        for (var i = 0; i < numeroYdia.length; i++) {
+
+            if (numeroYdia[i] == '01' || numeroYdia[i] == 1) {
+                contdia1 = contdia1 + 1;
+            }
+            if (numeroYdia[i] == '02' || numeroYdia[i] == 2) {
+                contdia2 = contdia2 + 1;
+            }
+            if (numeroYdia[i] == '03' || numeroYdia[i] == 3) {
+                contdia3 = contdia3 + 1;
+            }
+            if (numeroYdia[i] == '04' || numeroYdia[i] == 4) {
+                contdia4 = contdia4 + 1;
+            }
+            if (numeroYdia[i] == '05' || numeroYdia[i] == 5) {
+                contdia5 = contdia5 + 1;
+            }
+            if (numeroYdia[i] == '06' || numeroYdia[i] == 6) {
+                contdia6 = contdia6 + 1;
+            }
+            if (numeroYdia[i] == '07' || numeroYdia[i] == 7) {
+                contdia7 = contdia7 + 1;
+            }
+            if (numeroYdia[i] == '08' || numeroYdia[i] == 8) {
+                contdia8 = contdia8 + 1;
+            }
+            if (numeroYdia[i] == '09' || numeroYdia[i] == 9) {
+                contdia9 = contdia9 + 1;
+            }
+            if (numeroYdia[i] == '10' || numeroYdia[i] == 10) {
+                contdia10 = contdia10 + 1;
+            }
+            if (numeroYdia[i] == '11' || numeroYdia[i] == 11) {
+                contdia11 = contdia11 + 1;
+            }
+            if (numeroYdia[i] == '12' || numeroYdia[i] == 12) {
+                contdia12 = contdia12 + 1;
+            }
+            if (numeroYdia[i] == '13' || numeroYdia[i] == 13) {
+                contdia13 = contdia13 + 1;
+            }
+            if (numeroYdia[i] == '14' || numeroYdia[i] == 14) {
+                contdia14 = contdia14 + 1;
+            }
+            if (numeroYdia[i] == '15' || numeroYdia[i] == 15) {
+                contdia15 = contdia15 + 1;
+            }
+            if (numeroYdia[i] == '16' || numeroYdia[i] == 16) {
+                contdia16 = contdia16 + 1;
+            }
+        }
+        var dias_m = [parseInt(contdia0) + parseInt(contdia1), parseInt(contdia2), parseInt(contdia3), parseInt(contdia4), parseInt(contdia5), parseInt(contdia6), parseInt(contdia7), parseInt(contdia8), parseInt(contdia9), parseInt(contdia10), parseInt(contdia11), parseInt(contdia12), parseInt(contdia13), parseInt(contdia14), parseInt(contdia15), parseInt(contdia16)]
+       
+        pintar_dias(numeroYdia, dias_m);
     }
 
-    function pintar_dias(labels, values) {
+    function pintar_dias(labels, value) {
+        label = [];
+        for (let index = 0; index < value.length; index++) {
+            label[index] = index + 1;
 
+        }
+ 
+        var cttx = document.getElementById('dia_graf').getContext('2d');
+        var myChart2 = new Chart(cttx, {
+            type: "line",
+            data: {
+
+                labels: label,
+                datasets: [{
+                    label: "Redenciones por dia",
+                    data: value,
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 0.2)",
+                        "rgba(54, 162, 235, 0.2)",
+                        "rgba(255, 206, 86, 0.2)",
+                        "rgba(75, 192, 192, 0.2)",
+                    ],
+                    borderColor: [
+                        "rgba(255, 99, 132, 1)",
+                        "rgba(54, 162, 235, 1)",
+                        "rgba(255, 206, 86, 1)",
+                        "rgba(75, 192, 192, 1)",
+                    ],
+                    borderWidth: 1,
+                }, ],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
     }
 
 
