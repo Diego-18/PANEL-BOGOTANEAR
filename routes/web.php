@@ -14,4 +14,5 @@ Route::group(['middleware' => 'session'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/data', [App\Http\Controllers\HomeController::class, 'data'])->name('data');
     Route::post('/data_premio', [App\Http\Controllers\HomeController::class, 'data_premio'])->name('data_premio');
+    Route::post('/dia_datos', [App\Http\Controllers\HomeController::class, 'dia_datos'])->name('dia_datos');
 });
