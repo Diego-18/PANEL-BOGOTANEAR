@@ -5,7 +5,5 @@
     </h4>
     <br>
     <div style="width: 90%; justify-content: end; display: flex;"></div>
-    <div style="margin-top: 3rem; width: 1400px;">
-        <canvas id="dia_graf" width="1400"></canvas>
-    </div>
+ 
 </div>

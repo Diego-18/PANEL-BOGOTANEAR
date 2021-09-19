@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8ced2a34299b245be6c4735a314b6846
+class ComposerStaticInit3e9a3dd4d003fdca6aebdbbe10ed0698
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -26,8 +26,8 @@ class ComposerStaticInit8ced2a34299b245be6c4735a314b6846
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
@@ -1305,6 +1305,7 @@ class ComposerStaticInit8ced2a34299b245be6c4735a314b6846
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -5309,10 +5310,10 @@ class ComposerStaticInit8ced2a34299b245be6c4735a314b6846
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8ced2a34299b245be6c4735a314b6846::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8ced2a34299b245be6c4735a314b6846::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8ced2a34299b245be6c4735a314b6846::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8ced2a34299b245be6c4735a314b6846::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3e9a3dd4d003fdca6aebdbbe10ed0698::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3e9a3dd4d003fdca6aebdbbe10ed0698::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3e9a3dd4d003fdca6aebdbbe10ed0698::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit3e9a3dd4d003fdca6aebdbbe10ed0698::$classMap;
 
         }, null, ClassLoader::class);
     }
